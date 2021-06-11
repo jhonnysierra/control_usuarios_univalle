@@ -1,0 +1,2 @@
+# control_usuarios_univalle
+Esta aplicación permite realizar un control de los usuarios que hacen uso de los equipos de cómputo de la sala de sistemas de la Universidad del Valle sede Caicedonia. Para esto se hace la identificación del estudiante que usará el equipo con el fin de determinar el estado en el que este lo entrega y evitar uso sin plena identificación del estudiante que accede a este servicio.
