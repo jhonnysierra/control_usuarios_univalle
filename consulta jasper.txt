@@ -1,0 +1,10 @@
+SELECT
+     equipo_novedad.`equipo`,
+     date_format(equipo_novedad.fecha,'%d-%m-%Y')'fechanovedad',
+     time_format(equipo_novedad.hora,'%r')'horanovedad',
+     novedad.`descripcion`,
+     equipo_novedad.`descripcion`
+FROM
+     `equipo_novedad` equipo_novedad INNER JOIN `novedad` novedad ON equipo_novedad.`novedad` = novedad.`codigo` 
+ORDER BY
+     equipo_novedad.equipo ASC

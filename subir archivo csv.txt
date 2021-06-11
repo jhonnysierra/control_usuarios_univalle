@@ -1,0 +1,1 @@
+LOAD DATA LOCAL INFILE  'C:\\wamp\\tmp\\php5E41.tmp' INTO TABLE  `estudiante` FIELDS TERMINATED BY  ';' ENCLOSED BY  '"' ESCAPED BY  '\\' LINES TERMINATED BY '\r\n'

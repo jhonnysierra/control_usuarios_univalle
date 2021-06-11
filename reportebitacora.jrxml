@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportebitacora" language="groovy" pageWidth="1500" pageHeight="842" columnWidth="1460" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1eaf5c44-5573-44d6-8d6d-3349097ffbec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="40"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     bitacora.`codigo` AS bitacora_codigo,
+     DATE_FORMAT(bitacora.fecha,'%d-%m-%Y')'bitacora_fecha',
+     TIME_FORMAT(bitacora.horainicio,'%r')'bitacora_horainicio',
+     TIME_FORMAT(bitacora.horafin,'%r')'bitacora_horafin',
+     bitacora.`aula` AS bitacora_aula,
+     bitacora.`equipo` AS bitacora_equipo,
+     estudiante.`nombre1` AS estudiante_nombre1,
+     estudiante.`nombre2` AS estudiante_nombre2,
+     estudiante.`apellido1` AS estudiante_apellido1,
+     estudiante.`apellido2` AS estudiante_apellido2,
+     estudiante.`programa` AS estudiante_programa,
+     estudiante.`semestre` AS estudiante_semestre,
+     estudiante.`codigo` AS estudiante_codigo
+FROM
+     `estudiante` estudiante INNER JOIN `bitacora` bitacora ON estudiante.`codigo` = bitacora.`estudiante`]]>
+	</queryString>
+	<field name="bitacora_codigo" class="java.lang.Integer"/>
+	<field name="bitacora_fecha" class="java.lang.String"/>
+	<field name="bitacora_horainicio" class="java.lang.String"/>
+	<field name="bitacora_horafin" class="java.lang.String"/>
+	<field name="bitacora_aula" class="java.lang.String"/>
+	<field name="bitacora_equipo" class="java.lang.String"/>
+	<field name="estudiante_nombre1" class="java.lang.String"/>
+	<field name="estudiante_nombre2" class="java.lang.String"/>
+	<field name="estudiante_apellido1" class="java.lang.String"/>
+	<field name="estudiante_apellido2" class="java.lang.String"/>
+	<field name="estudiante_programa" class="java.lang.String"/>
+	<field name="estudiante_semestre" class="java.lang.String"/>
+	<field name="estudiante_codigo" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="1500" height="92" backcolor="#006699" uuid="6a6a5b3a-dee9-4521-91fb-fd3c754f85fc"/>
+				<staticText>
+					<reportElement x="20" y="20" width="1460" height="43" forecolor="#FFFFFF" uuid="a2b32bfa-a298-44a4-a4a9-191f12d1064e"/>
+					<textElement textAlignment="Center">
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[REPORTE USO DE EQUIPOS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="6"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25">
+			<line>
+				<reportElement x="-20" y="20" width="1500" height="1" forecolor="#666666" uuid="1a68fbfb-49b7-4e79-90a5-725e43f2cfb0"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="0" width="95" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="004a007d-f8b9-40d8-9f45-5200ebc83953"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO PC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="555" y="0" width="192" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f5b77fff-f8d4-4f22-a2f5-45844dfcc00b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO ESTUDIANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1070" y="1" width="142" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e1610051-743a-4335-a2e3-e873555dbf77"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDO 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1212" y="1" width="95" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c4fefefd-1005-444c-b6b6-a4f3d73be9b7"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROGRAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="978" y="1" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f43532d1-3bdc-41c1-8572-d39e755e8196"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDO 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="174" y="0" width="125" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6dce3a6c-1963-4ab8-b2a7-340e66ce96d1"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA INICIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="299" y="0" width="104" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c50ab2d2-29b5-4dba-ae83-e078091b4b2b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA FINAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="403" y="0" width="57" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8bc98698-3282-4e21-ac68-0f57db16c656"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="873" y="0" width="105" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d34f0fa8-a777-4770-a2c1-0d2bfeadc557"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="81" y="0" width="93" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f1648b9c-fbe5-4e12-ac0e-49d6319b17f9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA USO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="81" height="21" forecolor="#006699" backcolor="#E6E6E6" uuid="8e08de4c-de77-4b61-a86c-3ccd336a718a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1307" y="0" width="84" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6b0b87c2-d1cb-4342-9422-7543b87d645a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEMESTRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="747" y="0" width="126" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ba26f2a2-24d2-4471-bf91-0d1a8312e582"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE 1]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="1500" height="1" uuid="9def84ff-b079-4e14-9e89-d3a1e388dd9e"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="192" y="0" width="107" height="20" uuid="17d0701a-e7b0-48a5-bbab-b26acaaf3c0b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bitacora_horainicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="22" y="0" width="47" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="c89cf3d2-d1dc-4290-8706-1e28e696c56d"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bitacora_codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="310" y="0" width="93" height="20" uuid="25507f54-b804-4e21-bd53-fab028c71255"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bitacora_horafin}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="413" y="1" width="58" height="20" uuid="048450f5-f205-4782-86ee-2646613611cd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bitacora_aula}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="775" y="0" width="98" height="20" uuid="1c96f7b7-762f-4182-a5db-b461e4b1e23b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_nombre1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="873" y="0" width="105" height="20" uuid="a188c5d4-ec55-4f2a-b9c0-b33fb6499e36"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_nombre2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="988" y="1" width="106" height="20" uuid="bf4caa36-c872-475c-9513-cc02ebea91cf"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_apellido1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1237" y="1" width="46" height="20" uuid="eaaf4216-db61-4e48-81a1-03f98b4a38d0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_programa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="592" y="1" width="155" height="20" uuid="faa87f3e-811a-4a7e-8f22-fd682648bd2e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1104" y="1" width="118" height="20" uuid="3d9f5c82-09c6-44e2-8c01-fb5ac328d14a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_apellido2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1323" y="1" width="46" height="20" uuid="5f2b14b5-8c67-4ade-9c5c-af9ce01ec74b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_semestre}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="81" y="0" width="93" height="20" uuid="460afefe-aa7a-4f27-be4a-aca5cbb2748c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bitacora_fecha}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="471" y="1" width="84" height="20" uuid="0db78f07-511d-4c13-a136-4d35a2249a53"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bitacora_equipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="4378d359-41f5-42e5-adbc-cf6f576e3eab"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="df807cc3-8ec5-44b4-99aa-953cafbc82d4"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="aef01f88-9006-4f35-871f-8a1660e59eba"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
